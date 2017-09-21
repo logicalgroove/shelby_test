@@ -1,6 +1,5 @@
 class Consumers::JobsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :check_type
+  before_action :restrict_service_providers
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -46,9 +45,5 @@ class Consumers::JobsController < ApplicationController
 
   def set_job
     @job = current_user.jobs.find(params[:id])
-  end
-
-  def check_type
-    redirect_to root_path unless current_user.is_consumer?
   end
 end

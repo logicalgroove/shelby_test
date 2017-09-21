@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   root 'consumers/jobs#index'
 
+  resources :jobs, only: [:index, :show] do
+    get :accepted, on: :collection
+    put :accept, on: :member
+    put :cancel, on: :member
+  end
+
   namespace :consumers do
     resources :jobs
   end
