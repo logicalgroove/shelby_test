@@ -3,6 +3,6 @@ FactoryGirl.define do
     title "MyString"
     description "MyText"
     price_cents 1
-    consumer nil
+    association :user, factory: :consumer
   end
 end

@@ -1,0 +1,20 @@
+.col-md-12
+  h1.text-center
+    | Your Invitations
+.col-md-12
+  .panel.panel-default
+    .panel-heading.font-bold New invitation
+    .panel-body
+      = simple_form_for(:invitation, url: consumers_invitations_path, html: { class: 'form-inline' }, remote: true) do |f|
+        = f.input :email, label: false, placeholder: 'Enter email'
+        = f.submit 'Send invitation', class: 'btn btn-success'
+  br
+  table.table.table-striped
+    thead
+      tr
+        th #
+        th Email
+        th Sent at
+        th Accepted at
+    tbody
+      = render 'users_table', users: @users

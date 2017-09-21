@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   namespace :consumers do
     resources :jobs
+    resources :invitations, only: [:index, :create]
   end
 end

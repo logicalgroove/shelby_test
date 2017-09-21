@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  belongs_to :consumer, foreign_key: :user_id
+  belongs_to :user
   belongs_to :service_provider, foreign_key: :provider_id, required: false
 
   monetize :price_cents
