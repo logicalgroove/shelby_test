@@ -1,0 +1,26 @@
+.col-md-12
+  h1.text-center
+    | Your Jobs
+    = link_to 'New job', new_consumers_job_path, class: 'btn btn-success pull-right'
+.col-md-12
+  br
+  table.table.table-stripped
+    thead
+      tr
+        th #
+        th Name
+        th Description
+        th Price
+        th Actions
+    tbody
+      - @jobs.each do |job|
+        tr
+          td= job.id
+          td= job.title
+          td= truncate job.description
+          td= humanized_money_with_symbol job.price
+          td
+            .btn-group
+              = link_to 'Edit', edit_consumers_job_path(job), class: 'btn btn-dark'
+              = link_to 'Destroy', consumers_job_path(job), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' }
+

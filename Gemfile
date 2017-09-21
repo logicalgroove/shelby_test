@@ -19,6 +19,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
 gem 'devise'
 gem 'simple_form'
+gem 'jquery-rails'
+gem 'bootstrap-sass'
+gem 'money-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -27,6 +30,7 @@ group :development, :test do
   gem 'selenium-webdriver'
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do

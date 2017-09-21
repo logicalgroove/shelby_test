@@ -1,0 +1,4 @@
+h1= @job.title
+p= @job.description
+p= humanized_money_with_symbol @job.price
+= link_to 'Back', consumers_jobs_path, class: 'btn btn-dark'
